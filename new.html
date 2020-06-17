@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bizlers Tecnologies</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<style>
+		body{
+			overflow-y:scroll;
+
+		}
+		#logo{
+			width:550px;
+			height:100px;
+			margin-left:50px;
+		}.container{
+			display:flex;
+			margin-left:60px;
+			}
+			.account_name{
+			margin-left:350px;
+			color: #6c757d;
+			text-transform: uppercase;
+			display:block;
+			padding-top:1px;
+			font-size:20px;
+			font-weight:bold;
+		}.account_setting{
+			margin-left:360px;
+			color: #6c757d;
+			display:block;
+			font-weight:bold;
+
+		}.fa-user-circle{
+			font-size:75px;
+			margin:12px;
+			padding-left:20px;
+		}.sidebar {
+  height: 100%;
+  width:0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f8f9fa;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+  
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color:indigo;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  margin-left:-30px;
+}
+
+.openbtn:hover {
+  background-color:indigo;
+}.user_list{
+	margin-left:150px;
+	margin-top:20px;
+	color:grey;
+}#user{
+	margin-left:140px;
+	margin-top:10px;
+	color:grey;
+	border-radius:20px;
+	text-align:center;
+	outline:none;
+	width:200px;
+
+}.User_details{
+	margin-left:140px;
+	margin-top:30px;
+	color:grey;
+	border-bottom:2px #F0F0F0 solid
+
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}#validationCustom01{
+	margin-left:140px;
+	margin-top:20px;
+	width:260px;
+
+}#validationCustom02{
+	margin-left:140px;
+	margin-top:20px;
+	width:260px;
+
+}.input-group{
+	margin-left:140px;
+	margin-top:50px;
+	width:260px;
+    
+
+}#validationCustomemail{
+	margin-top:50px;
+	width:260px;
+	margin-left:140px;
+
+
+}#role{
+	height:38px;
+	width:260px;
+	margin-left:135px;
+	margin-top:50px;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+    color:grey;
+	
+}.form-group{
+	margin-top: 30px;
+    margin-left: 150px;
+
+}.wrap {
+    width: 1202px;
+}
+
+.wrap table {
+    width: 300px;
+    table-layout: fixed;
+}
+
+table tr td {
+    padding: 5px;
+    border: 1px solid #eee;
+    width: 100px;
+    word-wrap: break-word;
+    width: 299px;
+    height: 50px;
+}
+
+table.head tr td {
+    background: #eee;
+}
+
+.inner_table {
+    height: 200px;
+    overflow-y: auto;
+}
+	</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-md bg-white navbar-dark" style="border-bottom:2px #f8f9fa solid">
+	<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#"><i class="fas fa-search"></i></a>
+  <a href="#"><i class="fas fa-home"></i></a>
+  <a href="#"><i class="fas fa-chart-area"></i></a>
+   <a href="#"><i class="fas fa-cog"></i></a>
+  
+</div>
+
+<div id="main">
+  <button class="openbtn" onclick="openNav()">&#9776;</button>
+</div>
+
+  
+  <img src="company_logo.png" id="logo">
+  <div class="con">
+  <div class="account_name">Kajal Sharma</div>
+  <div class="account_setting">Account Settings</div>
+  </div>
+  <i class="fa fa-user-circle"></i>
+</nav>
+
+  <h1 class="user_list">User List</h1>
+  <form>
+  	<input type="text" name="user" id="user" placeholder="Search" style="position:relative;color:grey">
+  	<i class="fas fa-search" style="position:absolute;margin-left:-190px;margin-top:17px;color:grey"></i>
+</form>
+<div class="container table-wrapper-scroll-y my-custom-scrollbar" style="margin-top:29px;margin-left:130px;">
+<!-- <table class="table table-bordered mb-0">
+    <thead class="thead-light">
+      <tr>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody class="table_body">
+      <tr>
+        <td>John Doe</td>
+        <td>Admin</td>
+        <td><i class="fas fa-pencil-alt"></i></td>
+      </tr>
+      <tr>
+        <td>Mary Moe</td>
+        <td>Developer</td>
+        <td><i class="fas fa-pencil-alt"></i></td>
+      </tr>
+      <tr>
+        <td>July Dooley</td>
+        <td>QA</td>
+        <td><i class="fas fa-pencil-alt"></i></td>
+      </tr>
+       <tr>
+        <td>Beverly Jolley</td>
+        <td>Manager</td>
+        <td><i class="fas fa-pencil-alt"></i></td>
+      </tr>
+    </tbody>
+  </table> -->
+
+  <div class="wrap">
+    <table class="head">
+        <tr>
+            <td>Name</td>
+            <td>Role</td>
+            <td>Action</td>
+        </tr>
+    </table>
+    <div class="inner_table">
+        <table class="table_body">
+        <tr>
+            <td>John Doe</td>
+            <td>QA</td>
+            <td><i class="fas fa-pencil-alt"></td>
+        </tr>
+        <tr>
+            <td>Mary Moe</td>
+            <td>Developer</td>
+            <td><i class="fas fa-pencil-alt"></td>
+        </tr>
+       
+       
+        <tr>
+            <td>Beverly Jolley</td>
+            <td>Manager</td>
+            <td><i class="fas fa-pencil-alt"></td>
+        </tr>
+        <tr>
+            <td>July Dooley</td>
+            <td>Admin</td>
+            <td><i class="fas fa-pencil-alt"></td>
+        </tr>
+        
+    </table>
+    </div>
+</div>
+</div>
+<div class="submission" style="display:none;justify-content: center;align-items: center;margin-top: -150px;">
+		<h6 style="margin-top:150px;">Your form has been submitted Successfully!!!</h6>
+	</div>
+	<img src="company_logo.png" id="logo_sub" style="margin-left: 350px;display:none;">
+<div class="container-fluid main1" style="display:block;">
+      <div class="row">
+      <div class="col-sm-8 col-sm-6 form-container">
+      	<h3 class="User_details">New User Details</h3>
+<form class="needs-validation" novalidate>
+  <div class="form-row">
+  
+     
+      <input type="text" class="form-control" id="validationCustom01" placeholder="First name"  required>
+      
+      <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" required>
+      
+      
+    
+      
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+        </div>
+        <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+        <div class="invalid-feedback">
+          Please choose a username.
+        </div>
+        
+    
+
+  </div>
+ 
+      <input type="email" class="form-control" id="validationCustomemail" placeholder="Email" required>
+      
+      <select id ="role">
+   <option  value="Role">Role</option>
+    <option value="Admin">Admin</option>
+    <option value="Developer">Developer</option>
+    <option value="QA">QA</option>
+    <option value="Manager">Manager</option>
+  </select>
+      </div>
+      <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+      <label class="form-check-label" for="invalidCheck">
+        Send email confirmation
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+  </div>
+  
+</form>
+</div>
+
+
+            <div class="row" style="margin-left: 900px;
+    margin-top: -380px;">
+            <div class="col-sm-4 col-sm-8 form-container">
+      	 	<h3 style="margin-top:32px;color:grey;border-bottom:2px #F0F0F0 solid">Profile Picture</h3>
+
+      	 <form class="form_pic">
+      	 	<div class="image" style="width:200px;height:200px;border:2px grey solid;display:flex;align-items:center;justify-content: center;font-weight:bold;color:#cccccc">
+      	 		<img src="" class="image_preview" alt="Image Preview" style="display:none;width:200px;height:200px">
+      	 		<span class="image_default">Image Preview</span>
+  	
+  
+  </div>
+  
+  <input type="file" id="img" name="img" accept="image/*" style="margin-top:30px;">
+  </form>
+</div>
+
+
+     </div>
+        </div>
+        <div class="container-fluid" style="border-bottom:2px #F0F0F0 solid;">
+        </div><br/>
+        <button class="add_user"  style="margin-top:30px;margin-left:135px;width:130px;margin-bottom:20px;background:indigo">Add User</button>
+        
+        <button class="cancel" style="margin-top:30px;margin-left:10px;width:130px;background:#F0F0F0;margin-bottom:20px;">Cancel</button>
+        </div>
+
+
+
+  
+  </body>
+<script type="text/javascript" src="new.js"></script>
+<script type="text/javascript" src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+        integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+        crossorigin="anonymous"></script>
+        <script>
+        	const inpFile = document.querySelector("#img")
+        	
+        	const preview_Container = document.querySelector(".image")
+        	
+        	const preview = document.querySelector(".image_preview")
+        	
+      const preview_text = document.querySelector(".image_default")
+      
+
+        	
+
+        	inpFile.addEventListener("change",function(){
+        		const file = this.files[0];
+        		const fileSize = this.files[0].size / 1024 / 1024;
+
+
+        		console.log(file)
+        		if(file&&fileSize<=1){
+        			const reader = new FileReader();
+        			preview_text.style.display = "none"
+        			preview.style.display = 'block'
+
+        			reader.addEventListener("load",function(){
+        				console.log(this)
+        				preview.setAttribute("src",this.result)
+
+
+        			})
+        			reader.readAsDataURL(file)
+        		}else{
+        			alert('File size exceeds 1 MB')
+        		}
+
+        	})
+        </script>
+</html>
