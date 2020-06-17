@@ -21,10 +21,7 @@ const forms = document.querySelector('.needs-validation');
 const cancelButton = document.querySelector(".cancel");
 const checkbox = document.querySelector(".form-check-input")
 let listItem = [];
-// let name_value = name.value
-// console.log(name_value)
-// let role_optionvalue = role_option.value
-// console.log(role_optionvalue)
+
 
 'use strict';
   window.addEventListener('load', function() {
@@ -83,7 +80,7 @@ button.addEventListener("click",function(e){
         table.innerHTML = template
        
         form_pic.reset()
-        // forms.reset()
+      
         preview_text.style.display = "block"
         preview.style.display = 'none'
 
@@ -95,7 +92,7 @@ button.addEventListener("click",function(e){
        	    main1.style.display = 'none'
        	    logo_sub.style.display = 'flex'
 
-       }, 2000);
+       }, 1000);
 
        var showRealScreen = setTimeout(function() {
        	    var submission = document.querySelector(".submission")
@@ -106,7 +103,7 @@ button.addEventListener("click",function(e){
        	    logo_sub.style.display = 'none'
        	    
 
-       }, 3000);
+       }, 4000);
 
        
     }
