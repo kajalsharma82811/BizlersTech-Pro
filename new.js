@@ -107,16 +107,16 @@ cancelButton.addEventListener("click",function(){
 })
 
 let http = new XMLHttpRequest();
-let url = "http://dummy.restapiexample.com/api/v1/employees"
+let url = "http://localhost:3000/employees"
 let method = "GET"
 http.open(method,url)
 http.onreadystatechange = function(){
 if(http.readyState === XMLHttpRequest.DONE && http.status ===200){
     console.log(JSON.parse(http.response))
-    for (var i = 0; i < 24; i++) {
+    for (var i = 0; i < 4; i++) {
       template1 +=`<tr>
-        <td>${JSON.parse(http.response).data[i].employee_name}</td>
-        <td>${JSON.parse(http.response).data[i].employee_salary}</td>
+        <td>${JSON.parse(http.response)[i].user_name}</td>
+        <td>${JSON.parse(http.response)[i].employee_role}</td>
         <td><i class="fas fa-pencil-alt"></i></td>
       </tr>`
         console.log(template1)
@@ -124,19 +124,12 @@ if(http.readyState === XMLHttpRequest.DONE && http.status ===200){
         table.innerHTML = template1;
        
     
-    console.log(JSON.parse(http.response).data[i].employee_name)
-    console.log(JSON.parse(http.response).data[i].employee_salary)
-    console.log(JSON.parse(http.response).data[i].employee_age)
-    // console.log(JSON.parse(http.response).data[].employee_name)
+    
     
     }
     
     
-    // template +=`<tr>
-    //     <td>${employee_name}</td>
-    //     <td>${role_option.value}</td>
-    //     <td><i class="fas fa-pencil-alt"></i></td>
-    //   </tr>`
+    
         
   }else if(http.readyState === XMLHttpRequest.DONE && http.status!==200){
     console.log('something went wrong')

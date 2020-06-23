@@ -1,0 +1,36 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "first_name": "Sebastian",
+      "last_name": "Eschweiler",
+      "user_name": "Sebastian Eschweiler",
+      "email": "sebastian@codingthesmartway.com",
+      "employee_role": "Admin"
+    },
+    {
+      "id": 2,
+      "first_name": "Steve",
+      "last_name": "Palmer",
+      "user_name": "Steve Palmer",
+      "email": "steve@codingthesmartway.com",
+      "employee_role": "Manager"
+    },
+    {
+      "id": 3,
+      "first_name": "Ann",
+      "last_name": "Smith",
+      "user_name": "Ann Smith",
+      "email": "ann@codingthesmartway.com",
+      "employee_role": "QA"
+    },
+    {
+      "id": 3,
+      "first_name": "Ann",
+      "last_name": "Smith",
+      "user_name": "Steve Palmer",
+      "email": "ann@codingthesmartway.com",
+      "employee_role": "Developer"
+    }
+  ]
+}
