@@ -41,6 +41,7 @@ let listItem = [];
   }, false);
 
 var template =''
+var template1=''
 
 
 button.addEventListener("click",function(e){
@@ -58,17 +59,7 @@ button.addEventListener("click",function(e){
     }else{
 
     	// It will create json in console
-    	let name_value = name.value
-       console.log(name_value)
-       let role_optionvalue = role_option.value
-        console.log(role_optionvalue)
-
-    	var list = {};
-      	list.name1 = name_value;
-      	list.role = role_optionvalue;
-      	console.log(list)
-      	listItem.push(list)
-      	console.table(listItem)
+    	
     
     	template +=`<tr>
         <td>${name.value}</td>
@@ -114,5 +105,44 @@ button.addEventListener("click",function(e){
 cancelButton.addEventListener("click",function(){
 	location.reload()
 })
+
+let http = new XMLHttpRequest();
+let url = "http://dummy.restapiexample.com/api/v1/employees"
+let method = "GET"
+http.open(method,url)
+http.onreadystatechange = function(){
+if(http.readyState === XMLHttpRequest.DONE && http.status ===200){
+    console.log(JSON.parse(http.response))
+    for (var i = 0; i < 24; i++) {
+      template1 +=`<tr>
+        <td>${JSON.parse(http.response).data[i].employee_name}</td>
+        <td>${JSON.parse(http.response).data[i].employee_salary}</td>
+        <td><i class="fas fa-pencil-alt"></i></td>
+      </tr>`
+        console.log(template1)
+
+        table.innerHTML = template1;
+       
+    
+    console.log(JSON.parse(http.response).data[i].employee_name)
+    console.log(JSON.parse(http.response).data[i].employee_salary)
+    console.log(JSON.parse(http.response).data[i].employee_age)
+    // console.log(JSON.parse(http.response).data[].employee_name)
+    
+    }
+    
+    
+    // template +=`<tr>
+    //     <td>${employee_name}</td>
+    //     <td>${role_option.value}</td>
+    //     <td><i class="fas fa-pencil-alt"></i></td>
+    //   </tr>`
+        
+  }else if(http.readyState === XMLHttpRequest.DONE && http.status!==200){
+    console.log('something went wrong')
+  }
+    
+}
+http.send()
 
 
